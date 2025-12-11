@@ -1,7 +1,7 @@
 console.log("API =", import.meta.env.VITE_API_URL);
 
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/home.jsx";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Header from "./components/Header";
