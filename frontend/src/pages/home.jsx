@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/productcards.jsx";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
