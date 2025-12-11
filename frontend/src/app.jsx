@@ -4,9 +4,7 @@ import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Header from "./components/Header";
 
-useEffect(() => {
-  console.log(import.meta.env.VITE_API_URL);
-}, []);
+console.log("API =", import.meta.env.VITE_API_URL);
 
 function App() {
   return (
