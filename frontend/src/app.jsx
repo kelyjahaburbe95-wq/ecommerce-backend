@@ -2,7 +2,7 @@ console.log("API =", import.meta.env.VITE_API_URL);
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home.jsx";
-import Product from "./pages/product.jsx";
+import Product from "./pages/productcards.jsx";
 import Cart from "./pages/cart.jsx";
 
 function App() {
