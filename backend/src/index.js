@@ -1,13 +1,19 @@
 import express from "express";
 import cors from "cors";
-import productsRouter from "./products.js";
+import produitsRouter from "./produits.js";
 import checkoutRouter from "./checkout.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/products", productsRouter);
+app.use("/produits", produitsRouter);
 app.use("/checkout", checkoutRouter);
 
-app.listen(3000, () => console.log("Backend running on port 3000"));
+app.get("/", (req, res) => {
+  res.send("Backend e-commerce opérationnel !");
+});
+
+app.listen(3000, () => {
+  console.log("🚀 Serveur lancé sur http://localhost:3000");
+});
