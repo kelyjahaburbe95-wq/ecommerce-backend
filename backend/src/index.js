@@ -1,19 +1,23 @@
 import express from "express";
 import cors from "cors";
-import produitsRouter from "./produits.js";
-import checkoutRouter from "./checkout.js";
+import produitsRouter from "./src/produits.js";
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-app.use("/produits", produitsRouter);
-app.use("/checkout", checkoutRouter);
+// ✔️ Route API
+app.use("/products", produitsRouter);
 
+// ✔️ Route test
 app.get("/", (req, res) => {
-  res.send("Backend e-commerce opérationnel !");
+  res.send("API Ecommerce OK");
 });
 
-app.listen(3000, () => {
-  console.log("🚀 Serveur lancé sur http://localhost:3000");
+// ✔️ Render nécessite un PORT fourni par process.env.PORT
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Backend running on port " + PORT);
 });
