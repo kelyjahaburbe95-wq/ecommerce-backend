@@ -7,15 +7,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✔️ Route API
+// Route API
 app.use("/products", produitsRouter);
 
-// ✔️ Route test
+// Route test
 app.get("/", (req, res) => {
   res.send("API Ecommerce OK");
 });
 
-// ✔️ Render nécessite un PORT fourni par process.env.PORT
+// Render port
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
