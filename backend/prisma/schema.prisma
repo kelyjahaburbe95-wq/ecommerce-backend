@@ -1,15 +1,30 @@
+// Le générateur Prisma Client
 generator client {
   provider = "prisma-client-js"
 }
 
+// Configuration de la base de données (SQLite pour simplifier)
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
 }
 
-model Product {
-  id        Int     @id @default(autoincrement())
-  name      String
-  price     Float
-  image     String
+// =============================
+// ========   MODELS    ========
+// =============================
+
+// Produits vendus dans ton site
+model Produit {
+  id          Int     @id @default(autoincrement())
+  nom         String
+  description String?
+  prix        Float
+  image       String?
+}
+
+// Commandes des clients
+model Commande {
+  id        Int      @id @default(autoincrement())
+  total     Float
+  createdAt DateTime @default(now())
 }
