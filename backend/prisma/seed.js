@@ -2,21 +2,35 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  await prisma.product.createMany({
+
+  await prisma.produit.createMany({
     data: [
-      { name: "Produit 1", price: 19.99, image: "image1.jpg" },
-      { name: "Produit 2", price: 29.99, image: "image2.jpg" },
-      { name: "Produit 3", price: 39.99, image: "image3.jpg" }
+      {
+        nom: "iPhone 14",
+        description: "Smartphone Apple dernière génération",
+        prix: 999,
+        image: "https://via.placeholder.com/200"
+      },
+      {
+        nom: "AirPods",
+        description: "Écouteurs sans fil Apple",
+        prix: 199,
+        image: "https://via.placeholder.com/200"
+      },
+      {
+        nom: "MacBook Pro",
+        description: "Ordinateur portable performant",
+        prix: 1999,
+        image: "https://via.placeholder.com/200"
+      }
     ]
   });
+
+  console.log("🌱 Base de données remplie !");
 }
 
 main()
-  .then(() => {
-    console.log("Seed OK !");
-    prisma.$disconnect();
-  })
-  .catch((e) => {
-    console.error(e);
-    prisma.$disconnect();
+  .catch((e) => console.error(e))
+  .finally(async () => {
+    await prisma.$disconnect();
   });
