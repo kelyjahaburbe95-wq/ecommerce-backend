@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ProductCard from "../components/productcards.jsx";
+import ProductCards from "../components/productcards.jsx";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="p-4 grid grid-cols-2 gap-4">
       {products.map(p => (
-        <ProductCard key={p.id} product={p} />
+        <ProductCards key={p.id} product={p} />
       ))}
     </div>
   );
